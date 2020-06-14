@@ -1,0 +1,5 @@
+*.tfstate*
+.terraform
+# ignore tfvars used to store aws secrets
+*.tfvars
+backend.tf
