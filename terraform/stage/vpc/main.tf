@@ -28,8 +28,9 @@ module "vpc" {
   enable_vpn_gateway = false
 
   enable_s3_endpoint              = true
-  enable_ssm_endpoint             = true
-  ssm_endpoint_security_group_ids = [data.aws_security_group.default.id]
+
+  # this is an interface endpoint and has an hourly cost. 
+  enable_ssm_endpoint             = false
 
   public_dedicated_network_acl = true
   public_inbound_acl_rules = concat(
